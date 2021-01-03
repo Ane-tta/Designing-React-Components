@@ -1,21 +1,7 @@
-import React from 'react'
+import React from 'react';
+import withData from "./withData";
 
-const speakers = [
-    {
-        imageSrc: "speaker01",
-        name: "Andri Ragettli"
-    },
-    {
-        imageSrc: "speaker02",
-        name: "Camille Armand"
-    },
-    {
-        imageSrc: "speaker03",
-        name: "Veroniqi Hanssen"
-    }
-];
-
-const Speakers = () => {
+const Speakers = ({ speakers }) => {
     return (
         <div>
             {
@@ -25,4 +11,5 @@ const Speakers = () => {
     );
 }
 
-export default Speakers
+const maxSpeakersToShow = 2;
+export default withData(maxSpeakersToShow)(Speakers);
