@@ -1,10 +1,11 @@
 import React from 'react'
-import Header from "../src/components/Header/Header";
-import Menu from "../src/components/Menu/Menu";
+// import Header from "../src/components/Header/Header";
+// import Menu from "../src/components/Menu/Menu";
 import Speakers from "../src/components/Speakers/Speakers";
-import SpeakerSearchBar from "../src/components/SpeakerSearchBar/SpeakerSearchBar";
-import Footer from "../src/components/Footer/Footer";
+// import SpeakerSearchBar from "../src/components/SpeakerSearchBar/SpeakerSearchBar";
+// import Footer from "../src/components/Footer/Footer";
 import SpeakerContext from "../src/components/Speakers/SpeakerContext";
+import Layout from "../src/components/Layout/Layout";
 
 const Page = () => {
     const speakers = [
@@ -22,20 +23,28 @@ const Page = () => {
         }
     ];
 
+    // return (
+    //     <div>
+    //         <Header />
+    //         <Menu />
+    //         {/* Every context comes with a Provider React component */}
+    //         {/* that allows the consuming component to subscribe to any changes in that context. */}
+    //         {/* The context provider accepts a `value` prop that can be passed in. */}
+    //         {/* Any nested component Inside this context will have access to whatever we set this value to. */}
+    //         <SpeakerContext.Provider value={speakers}>
+    //             <SpeakerSearchBar />
+    //             <Speakers />
+    //         </SpeakerContext.Provider>
+    //         <Footer />
+    //     </div>
+    // )
+
     return (
-        <div>
-            <Header />
-            <Menu />
-            {/* Every context comes with a Provider React component */}
-            {/* that allows the consuming component to subscribe to any changes in that context. */}
-            {/* The context provider accepts a `value` prop that can be passed in. */}
-            {/* Any nested component Inside this context will have access to whatever we set this value to. */}
+        <Layout>
             <SpeakerContext.Provider value={speakers}>
-                <SpeakerSearchBar />
                 <Speakers />
             </SpeakerContext.Provider>
-            <Footer />
-        </div>
+        </Layout>
     )
 }
 
